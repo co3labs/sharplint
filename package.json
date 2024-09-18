@@ -1,12 +1,13 @@
 {
   "name": "sharplint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sharplint ensures consistent code quality across all your projects using optimal ESLint, Prettier, Type Checks and Husky configuration",
   "main": "index.js",
   "bin": {
     "code-quality-checker": "./bin/cli.js"
   },
   "scripts": {
+    "build": "tsc --project ./tsconfig.json --outDir ./bin",
     "lint": "eslint 'src/**/*.{ts,tsx}' --quiet",
     "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
     "type-check": "tsc --noEmit",

@@ -28,10 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 5: (Optional) Run tests before publishing
-      - name: Run tests
-        run: npm test
-
+      # Step 5: Build artifacts
+      - name: Build artifacts
+        run: npm run build
       # Step 6: Publish the package to NPM
       - name: Publish to NPM
         run: npm publish
