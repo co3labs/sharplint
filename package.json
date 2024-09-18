@@ -1,0 +1,40 @@
+{
+  "name": "sharplint",
+  "version": "0.0.1",
+  "description": "Sharplint ensures consistent code quality across all your projects using optimal ESLint, Prettier, Type Checks and Husky configuration",
+  "main": "index.js",
+  "bin": {
+    "code-quality-checker": "./bin/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**/*.{ts,tsx}' --quiet",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "0xdatax <datax.fi@gmail.com> (https://datax.fi/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
+
