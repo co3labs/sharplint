@@ -12,9 +12,9 @@ function runCommand(command) {
         process.exit(1); // Exit with failure if any command fails
     }
 }
-// Run TypeScript checks
-runCommand('npm run type-check');
-// Run prettier
-runCommand('npm run format');
-// Run eslint
-runCommand('npm run lint');
+// Run TypeScript checks directly with `tsc`
+runCommand('npx tsc --noEmit');
+// Run prettier directly
+runCommand('npx prettier --write .');
+// Run eslint directly
+runCommand('npx eslint .');

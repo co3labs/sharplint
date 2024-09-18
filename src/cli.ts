@@ -12,11 +12,11 @@ function runCommand(command: string): void {
   }
 }
 
-// Run TypeScript checks
-runCommand('npm run type-check')
+// Run TypeScript checks directly with `tsc`
+runCommand('npx tsc --noEmit')
 
-// Run prettier
-runCommand('npm run format')
+// Run prettier directly
+runCommand('npx prettier --write .')
 
-// Run eslint
-runCommand('npm run lint')
+// Run eslint directly
+runCommand('npx eslint .')
